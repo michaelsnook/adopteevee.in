@@ -56,7 +56,6 @@ body, main, header {
   .eevee { @include span-columns(7); }
   .dex { @include span-columns(5); }
 }
-
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px)
   and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
     .eevee, .dex { @include span-columns(12); }
