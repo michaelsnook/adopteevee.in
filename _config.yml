@@ -1,11 +1,11 @@
 meta:
-  domainroot: http://adopteevee.in # no trailing slash
+  domainroot: http://www.adopteevee.in # no trailing slash
   title: Adopt Eevee
   description: We found this adorable little pupper abandoned on the street
     in Indiranagar, Banglore, and now she needs a loving home. Click to find
     out more.
   keywords: adopt dog pet puppy pupper doggo pokemon
-  
+
 sass:
   sass_dir: neat
 exclude:
