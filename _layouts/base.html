@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ site.meta.title }}</title>
+
+    <meta name="title" content="{{ site.meta.title }}" />
+    <meta name="description" content="{{ site.meta.description }}" />
+    <meta name="keywords" content="{{ site.meta.keywords }}" />
+    <meta property="og:title" content="{{ site.meta.title }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="{{ site.meta.title }}"/>
+    <meta property="og:description" content="{{ site.meta.description }}" />
+    <meta property="og:url" content="{{ site.meta.domainroot }}" />
+    <meta property="og:image" content="{{ site.meta.domainroot }}/static/images/preview.jpg"/>
+    <link rel="image_src" href="/static/images/preview.jpg" />
+    <link rel="shortcut icon" type="image/png" href="/static/images/favicon.png" />
+
+    <link rel="stylesheet" href="/static/main.css">
+
+  </head>
+  <body>
+
+    {{ content }}
+
+  </body>
+</html>
