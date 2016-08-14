@@ -1,6 +1,7 @@
 ---
 ---
 @import 'neat';
+@import 'pokeball';
 
 $color-ear: #6a3c1c;
 $color-fur: #EFE1AF;
@@ -9,7 +10,7 @@ $total-kf: 13;
 $duration: 10s;
 
 $screen-sm: 600px;
-$screen-md: 720px;
+$screen-md: 768px;
 $screen-lg: 840px;
 
 $screen-xs-max: $screen-sm - 1px;
@@ -22,6 +23,7 @@ $screen-lg-min: $screen-lg;
 .content-wrap {
   @include outer-container;
   @include row();
+  @include clearfix;
   background-color: rgba(0,0,0,0.4);
   border-radius: 10px;
   border: 1px rgba(0,0,0,0.2) solid;
@@ -35,18 +37,25 @@ html, body {
   padding: 0;
   font-size: 14px;
 }
-body, main, header {
+body, main, header, footer {
   padding: 4vh;
 }
 *, *:before, *:after {
   box-sizing: border-box;
-  position: relative;
 }
+
 .img-right {
+  float: right;
   width: 100%;
   max-height: auto;
-  float: right;
-  margin-bottom: 1rem;
+}
+
+@media (max-width: $screen-xs-max) {
+  .eevee, .dex {
+    @include clearfix;
+    @include span-columns(12);
+  }
+  .dex { margin-top: 1rem; }
 }
 @media (min-width: $screen-sm-min) {
   .eevee { @include span-columns(6); }
@@ -58,17 +67,16 @@ body, main, header {
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px)
   and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
-    .eevee, .dex { @include span-columns(12); }
+  .eevee, .dex {
+    @include clearfix;
+    @include span-columns(12);
+  }
+  .dex { margin-top: 1rem; }
 }
 
-
 html body {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   min-height: 100%;
   height: auto;
-  align-items: center;
   $light: rgba(white, 0.6);
   $lighter: rgba(white, 0.3);
   background-image:
@@ -103,7 +111,6 @@ html body {
   font-size: 14px;
   color: white;
   font-weight: 300;
-
 }
 
 .heading {
@@ -124,35 +131,6 @@ html body {
 
 }
 
-.pokeball {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  background: radial-gradient(0.4rem, white, white 50%, transparent 50%);
-  margin-right: 1rem;
-
-  &:before, &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: -0.063rem;
-    left: 0;
-    height: 50%;
-    width: 100%;
-    border-radius: 0 0 1rem 1rem;
-    box-shadow:
-      inset 0 -0.09rem 0 0.09rem white,
-      inset 0.09rem -0.09rem 0 0.09rem white,
-      inset -0.09rem -0.09rem 0 0.09rem white
-      ;
-  }
-
-  &:after {
-    transform-origin: top center;
-    transform: rotateX(180deg);
-    bottom: 0.063rem;
-  }
-}
 .info {
   display: inline-block;
   margin-right: 1rem;
@@ -183,11 +161,9 @@ a {
 
 html {
   background: radial-gradient(50vmin 50vmin, #FEB4FF, #A3A3EC);
-
   background-position: -20vw center;
   background-repeat: no-repeat;
   background-color: #a3a3ec;
-
   @media (max-width: 600px) {
     background-position: center -20vw;
   }
