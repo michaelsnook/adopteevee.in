@@ -5,6 +5,9 @@
 
 $color-ear: #6a3c1c;
 $color-fur: #EFE1AF;
+$purplish: #a3a3ec;
+$purplish-light: #feb4ff;
+
 $easing: cubic-bezier(0.645, 0.045, 0.355, 1);
 $total-kf: 13;
 $duration: 10s;
@@ -28,7 +31,15 @@ $screen-lg-min: $screen-lg;
   border-radius: 10px;
   border: 1px rgba(0,0,0,0.2) solid;
   max-width: 768px;
+  margin-bottom: 4vh;
 }
+header.content-wrap {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-top: -1px;
+}
+
+p:last-child { margin-bottom: 0; }
 
 html, body {
   width: 100%;
@@ -40,6 +51,7 @@ html, body {
 body, main, header, footer {
   padding: 4vh;
 }
+body { padding-top: 0; }
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -160,12 +172,11 @@ a {
 }
 
 html {
-  background: radial-gradient(50vmin 50vmin, #FEB4FF, #A3A3EC);
+  background: radial-gradient(50vmin 50vmin, $purplish-light, $purplish);
   background-position: -20vw center;
   background-repeat: no-repeat;
-  background-color: #a3a3ec;
+  background-color: $purplish;
   @media (max-width: 600px) {
     background-position: center -20vw;
   }
-
 }
