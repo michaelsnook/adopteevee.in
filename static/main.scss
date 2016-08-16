@@ -37,6 +37,12 @@ header.content-wrap {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   margin-top: -1px;
+  .pokeball { margin-right: 0.3rem; }
+}
+footer {
+  width: 100%;
+  text-align: center;
+  .pokeball { margin-right: 0;}
 }
 
 p:last-child { margin-bottom: 0; }
@@ -51,7 +57,7 @@ html, body {
 body, main, header, footer {
   padding: 4vh;
 }
-body { padding-top: 0; }
+body { padding-top: 0; padding-bottom: 0; }
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -165,6 +171,8 @@ a {
   &, &:active, &:visited {
     color: white;
   }
+  text-decoration: initial;
+  border-bottom: 1px dotted white;
 
   &:hover {
     opacity: 0.8;
